@@ -1,0 +1,136 @@
+{
+  "id": "ok-cine",
+  "name": "OK.ru Video",
+  "version": "1.2.5",
+  "apiVersion": 6,
+  "entry": "plugin.js",
+  "description": "Películas, series y WWE de OK.ru en español. Sesión opcional. Login móvil. Fila WWE Español.",
+  "author": "Hotaru Yume",
+  "creator": "hotaruyume",
+  "homepage": "https://github.com/yumehotaru41-rgb/Kino-plugin-oruss",
+  "icon": "icon.png",
+  "color": "#FF7A00",
+  "categories": [
+    "movies",
+    "series"
+  ],
+  "hosts": [
+    "ok.ru",
+    "*.ok.ru",
+    "*.okcdn.ru",
+    "*.vkuser.net"
+  ],
+  "streamHosts": "any",
+  "capabilities": [
+    "search",
+    "home",
+    "browse",
+    "episodes",
+    "resolve"
+  ],
+  "enhancements": {
+    "20": {
+      "visualBrowser": true
+    }
+  },
+  "settings": [
+    {
+      "key": "secSession",
+      "label": "Sesión de OK.ru",
+      "type": "section",
+      "hint": "Opcional: solo para Mis canales y suscripciones"
+    },
+    {
+      "key": "vincularLogin",
+      "label": "Iniciar sesión con navegador",
+      "type": "action"
+    },
+    {
+      "key": "okCookie",
+      "label": "Cookies de sesión (a mano)",
+      "type": "password",
+      "hint": "Pega remixsid. Móvil: en m.ok.ru usa javascript:prompt('',document.cookie)"
+    },
+    {
+      "key": "estadoSesion",
+      "label": "Estado de la sesión",
+      "type": "status"
+    },
+    {
+      "key": "checkSession",
+      "label": "Comprobar sesión",
+      "type": "action"
+    },
+    {
+      "key": "cerrarSesion",
+      "label": "Cerrar sesión de OK",
+      "type": "action",
+      "confirm": "¿Olvidar la sesión de OK guardada en este plugin?"
+    },
+    {
+      "key": "canalWwe",
+      "label": "Canal de la fila WWE Español",
+      "type": "text",
+      "hint": "Por defecto: Donluchas (ok.ru/profile/601979821580)"
+    },
+    {
+      "key": "secReproduccion",
+      "label": "Reproducción",
+      "type": "section"
+    },
+    {
+      "key": "quality",
+      "label": "Calidad de video",
+      "type": "select",
+      "default": "auto",
+      "hint": "Automática: HLS de OK.ru según tu conexión",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Automática (recomendada)"
+        },
+        {
+          "value": "1080",
+          "label": "Full HD 1080p"
+        },
+        {
+          "value": "720",
+          "label": "HD 720p"
+        },
+        {
+          "value": "480",
+          "label": "SD 480p"
+        },
+        {
+          "value": "360",
+          "label": "Baja 360p (ahorra datos)"
+        }
+      ]
+    },
+    {
+      "key": "subs",
+      "label": "Subtítulos",
+      "type": "select",
+      "default": "es",
+      "hint": "Si hay subtítulos, el español va primero",
+      "options": [
+        {
+          "value": "es",
+          "label": "Español primero (recomendado)"
+        },
+        {
+          "value": "es-en",
+          "label": "Español e inglés"
+        },
+        {
+          "value": "all",
+          "label": "Todos los idiomas"
+        },
+        {
+          "value": "off",
+          "label": "Desactivados"
+        }
+      ]
+    }
+  ]
+}
